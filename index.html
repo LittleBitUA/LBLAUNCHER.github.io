@@ -23,6 +23,7 @@
                 <li><a href="#hero">Головна</a></li>
                 <li><a href="#showcase">Галерея</a></li>
                 <li><a href="#features">Функції</a></li>
+                <li><a href="#collaboration">Співпраця</a></li>
             </ul>
             <div class="nav-socials">
                 <a href="#"><i class="fa-brands fa-telegram"></i></a>
@@ -34,8 +35,11 @@
     <section id="hero" class="hero">
         <div class="container hero-wrapper">
             <div class="hero-content" data-aos="fade-right">
-                <div class="badge">v1.19.4 Вже доступна</div>
-                <h1>Всі українізатори <br> в <span class="text-gradient">Один Клік</span></h1>
+                <div class="badge" id="version-badge">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span id="version-text">v1.19.4 Вже доступна</span>
+                </div>
+                <h1>Українізатори <br> в <span class="text-gradient">один клац!</span></h1>
                 <p>Зручний менеджер для встановлення та оновлення перекладів. Автоматичний пошук ігор, світла/темна теми та резервні копії.</p>
                 
                 <div class="download-row">
@@ -55,7 +59,7 @@
 
                 <div class="stats-mini">
                     <div><i class="fa-solid fa-gamepad"></i> <span class="counter" data-target="150">0</span>+ Ігор</div>
-                    <div><i class="fa-solid fa-download"></i> <span class="counter" data-target="10000">0</span>+ Завантажень</div>
+                    <div><i class="fa-solid fa-download"></i> <span class="counter" id="download-count" data-target="0">0</span>+ Завантажень</div>
                 </div>
             </div>
             
@@ -70,19 +74,19 @@
         <div class="container">
             <div class="grid-box">
                 <div class="g-card" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fa-solid fa-bolt"></i>
-                    <h3>Швидкість</h3>
-                    <p>Миттєве визначення встановлених ігор.</p>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h3>Автоматичний пошук</h3>
+                    <p>Лаунчер автоматично знаходить всі встановлені ігри в твоїх бібліотеках.</p>
                 </div>
                 <div class="g-card" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <h3>Безпека</h3>
-                    <p>Перевірені файли та резервні копії оригіналів.</p>
+                    <i class="fa-solid fa-download"></i>
+                    <h3>Встановлення в один клік</h3>
+                    <p>Встановлюй, оновлюй або видаляй переклади буквально за секунди.</p>
                 </div>
                 <div class="g-card" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <h3>Зручність</h3>
-                    <p>Інтуїтивний інтерфейс та автоматичні оновлення.</p>
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    <h3>Резервні копії</h3>
+                    <p>Автоматичне створення бекапів оригінальних файлів перед встановленням.</p>
                 </div>
             </div>
         </div>
@@ -107,6 +111,24 @@
                 </div>
                 <div class="fr-img multiple" data-aos="fade-right">
                     <img src="assets/3.jpg" alt="Settings" class="img-overlay-1">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collaboration" class="collaboration-sec">
+        <div class="container">
+            <div class="feature-row">
+                <div class="fr-text" data-aos="fade-right">
+                    <h2 class="section-title">Співпраця з командами</h2>
+                    <p>Хочеш додати свою гру до лаунчера? Ми завжди відкриті до співпраці з командами перекладачів. Напиши нам через Telegram бота, і ми обговоримо деталі додавання твоєї гри до LB Launcher.</p>
+                    <a href="https://t.me/lb_launcher_bot" target="_blank" class="contact-btn" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fa-brands fa-telegram"></i>
+                        Написати нам
+                    </a>
+                </div>
+                <div class="fr-img" data-aos="fade-left">
+                    <img src="assets/6.png" alt="Collaboration">
                 </div>
             </div>
         </div>
