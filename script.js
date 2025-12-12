@@ -31,30 +31,36 @@ async function fetchLatestRelease() {
         
         // Отримуємо всі релізи для підрахунку загальних завантажень
         const allReleasesResponse = await fetch('https://api.github.com/repos/Vadko/littlebit-launcher/releases?per_page=100');
+        const downloadCountEl = document.getElementById('download-count');
+
         if (allReleasesResponse.ok) {
             const allReleases = await allReleasesResponse.json();
-            
+
             // Підраховуємо загальну кількість завантажень з усіх релізів
             let totalDownloads = 0;
             allReleases.forEach(release => {
                 release.assets.forEach(asset => {
                     // Рахуємо тільки основні файли (не blockmap, не yml, не source code)
                     const name = asset.name.toLowerCase();
-                    if (!name.includes('blockmap') && 
-                        !name.endsWith('.yml') && 
+                    if (!name.includes('blockmap') &&
+                        !name.endsWith('.yml') &&
                         !name.includes('source code') &&
-                        !name.endsWith('.zip') && 
+                        !name.endsWith('.zip') &&
                         !name.endsWith('.tar.gz')) {
                         totalDownloads += asset.download_count || 0;
                     }
                 });
             });
-            
+
             // Оновлюємо лічильник завантажень
-            const downloadCountEl = document.getElementById('download-count');
-            if (downloadCountEl) {
+            if (downloadCountEl && totalDownloads > 0) {
                 downloadCountEl.setAttribute('data-target', totalDownloads);
-                // Запускаємо анімацію лічильника
+                animateCounter(downloadCountEl);
+            }
+        } else {
+            // Fallback - показуємо приблизне значення якщо API недоступний
+            if (downloadCountEl) {
+                downloadCountEl.setAttribute('data-target', 1000);
                 animateCounter(downloadCountEl);
             }
         }
@@ -105,6 +111,13 @@ async function fetchLatestRelease() {
         downloadLinks.macos = fallbackUrl;
         downloadLinks.linux = fallbackUrl;
         updateDownloadButtons();
+
+        // Fallback для лічильника завантажень
+        const downloadCountEl = document.getElementById('download-count');
+        if (downloadCountEl) {
+            downloadCountEl.setAttribute('data-target', 1000);
+            animateCounter(downloadCountEl);
+        }
     }
 }
 
@@ -216,28 +229,40 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- Функція анімації лічильника ---
 function animateCounter(counter) {
     const target = +counter.getAttribute('data-target');
-    const current = +counter.innerText || 0;
-    const speed = 200;
-    const inc = target / speed;
-    
-    const updateCount = () => {
-        const count = +counter.innerText || 0;
-        if (count < target) {
-            counter.innerText = Math.ceil(count + inc);
-            setTimeout(updateCount, 20);
+    if (target <= 0) return; // Немає чого анімувати
+
+    const duration = 1500; // 1.5 секунди
+    const startTime = performance.now();
+
+    // Скидаємо на 0 перед анімацією
+    counter.innerText = '0';
+
+    const updateCount = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Використовуємо easeOutCubic для плавного сповільнення
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.floor(easeProgress * target);
+
+        counter.innerText = currentValue;
+
+        if (progress < 1) {
+            requestAnimationFrame(updateCount);
         } else {
             counter.innerText = target;
         }
     };
-    
-    if (current < target) {
-        updateCount();
-    }
+
+    requestAnimationFrame(updateCount);
 }
 
 // --- Анімація лічильника цифр ---
 const counters = document.querySelectorAll('.counter');
 counters.forEach(counter => {
+    // Пропускаємо download-count, бо він оновлюється з API
+    if (counter.id === 'download-count') return;
+
     const observer = new IntersectionObserver((entries) => {
         if(entries[0].isIntersecting) {
             animateCounter(counter);
@@ -264,47 +289,123 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// --- Анімація рамки для карток функцій (як на littlebitua.github.io) ---
-document.querySelectorAll('.g-card').forEach(card => {
-    let angle = 0;
-    let animationId = null;
-    let isHovered = false;
-    
-    // Обертання градієнта
-    const rotateGradient = () => {
-        if (!isHovered) return;
-        angle += 0.5;
-        if (angle >= 360) angle = 0;
-        card.style.setProperty('--gradient-angle', angle);
-        animationId = requestAnimationFrame(rotateGradient);
-    };
-    
-    card.addEventListener('mouseenter', function() {
-        isHovered = true;
-        rotateGradient();
+// --- Анімація рамки для карток функцій ---
+function addCardAnimation(selector) {
+    document.querySelectorAll(selector).forEach(card => {
+        let angle = 0;
+        let animationId = null;
+        let isHovered = false;
+
+        // Обертання градієнта
+        const rotateGradient = () => {
+            if (!isHovered) return;
+            angle += 0.5;
+            if (angle >= 360) angle = 0;
+            card.style.setProperty('--gradient-angle', angle);
+            animationId = requestAnimationFrame(rotateGradient);
+        };
+
+        card.addEventListener('mouseenter', function() {
+            isHovered = true;
+            rotateGradient();
+        });
+
+        card.addEventListener('mousemove', function(e) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const posX = (x / rect.width) * 100;
+            const posY = (y / rect.height) * 100;
+
+            card.style.setProperty('--mouse-x', `${posX}%`);
+            card.style.setProperty('--mouse-y', `${posY}%`);
+        });
+
+        card.addEventListener('mouseleave', function() {
+            isHovered = false;
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+                animationId = null;
+            }
+            card.style.setProperty('--mouse-x', '50%');
+            card.style.setProperty('--mouse-y', '50%');
+            angle = 0;
+            card.style.setProperty('--gradient-angle', '0');
+        });
     });
-    
-    card.addEventListener('mousemove', function(e) {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const posX = (x / rect.width) * 100;
-        const posY = (y / rect.height) * 100;
-        
-        card.style.setProperty('--mouse-x', `${posX}%`);
-        card.style.setProperty('--mouse-y', `${posY}%`);
+}
+
+// Застосовуємо анімацію до обох типів карток
+addCardAnimation('.g-card');
+addCardAnimation('.why-card');
+
+// --- Lightbox для галереї ---
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxClose = document.getElementById('lightbox-close');
+const lightboxPrev = document.getElementById('lightbox-prev');
+const lightboxNext = document.getElementById('lightbox-next');
+
+const galleryItems = document.querySelectorAll('.gallery-item');
+let currentImageIndex = 0;
+
+// Збираємо всі зображення галереї
+const galleryImages = Array.from(galleryItems).map(item => ({
+    src: item.querySelector('img').src,
+    caption: item.querySelector('.gallery-overlay span').textContent
+}));
+
+// Відкриття lightbox при кліку на зображення
+galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        currentImageIndex = index;
+        openLightbox();
     });
-    
-    card.addEventListener('mouseleave', function() {
-        isHovered = false;
-        if (animationId) {
-            cancelAnimationFrame(animationId);
-            animationId = null;
-        }
-        card.style.setProperty('--mouse-x', '50%');
-        card.style.setProperty('--mouse-y', '50%');
-        angle = 0;
-        card.style.setProperty('--gradient-angle', '0');
-    });
+});
+
+function openLightbox() {
+    lightboxImg.src = galleryImages[currentImageIndex].src;
+    lightboxCaption.textContent = galleryImages[currentImageIndex].caption;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function showPrevImage() {
+    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    lightboxImg.src = galleryImages[currentImageIndex].src;
+    lightboxCaption.textContent = galleryImages[currentImageIndex].caption;
+}
+
+function showNextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    lightboxImg.src = galleryImages[currentImageIndex].src;
+    lightboxCaption.textContent = galleryImages[currentImageIndex].caption;
+}
+
+// Event listeners для кнопок
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxPrev.addEventListener('click', showPrevImage);
+lightboxNext.addEventListener('click', showNextImage);
+
+// Закриття при кліку на фон
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Навігація клавіатурою
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrevImage();
+    if (e.key === 'ArrowRight') showNextImage();
 });
