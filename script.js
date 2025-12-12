@@ -462,20 +462,23 @@ window.addEventListener('load', () => {
     }, 500);
 });
 
-// --- Parallax Effect for Orbs ---
+// --- Parallax Effect for Orbs (тільки на десктопі) ---
 const orb1 = document.querySelector('.orb-1');
 const orb2 = document.querySelector('.orb-2');
+const isDesktop = window.innerWidth >= 968;
 
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
+if (isDesktop) {
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
 
-    if (orb1) {
-        orb1.style.transform = `translateY(${scrollY * 0.3}px)`;
-    }
-    if (orb2) {
-        orb2.style.transform = `translateY(${scrollY * -0.2}px)`;
-    }
-});
+        if (orb1) {
+            orb1.style.transform = `translateY(${scrollY * 0.3}px)`;
+        }
+        if (orb2) {
+            orb2.style.transform = `translateY(${scrollY * -0.2}px)`;
+        }
+    }, { passive: true });
+}
 
 // --- Typewriter Effect ---
 const typewriterElement = document.getElementById('typewriter');
