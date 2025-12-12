@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LB Launcher — Твої ігри рідною мовою</title>
+    <title>LB Launcher — Ваші ігри рідною мовою</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">LB</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
 
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
@@ -45,7 +56,7 @@
                     <span id="version-text">v1.19.4 Вже доступна</span>
                     <div class="badge-pulse"></div>
                 </div>
-                <h1>Українізатори <br> в <span class="text-gradient">один клац!</span></h1>
+                <h1>Ваші ігри <br> <span class="text-gradient typewriter" id="typewriter"></span></h1>
                 <p>Зручний менеджер для встановлення та оновлення перекладів. Автоматичний пошук ігор, світла/темна теми та резервні копії.</p>
                 
                 <div class="download-row">
@@ -138,7 +149,7 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <h3>Автоматичний пошук</h3>
-                    <p>Лаунчер автоматично знаходить всі встановлені ігри в твоїх бібліотеках</p>
+                    <p>Лаунчер автоматично знаходить всі встановлені ігри у ваших бібліотеках</p>
                 </div>
 
                 <div class="why-card" data-aos="fade-up" data-aos-delay="200">
@@ -146,7 +157,7 @@
                         <i class="fa-solid fa-bolt"></i>
                     </div>
                     <h3>Встановлення в один клік</h3>
-                    <p>Встановлюй, оновлюй або видаляй переклади буквально за секунди</p>
+                    <p>Встановлюйте, оновлюйте або видаляйте переклади буквально за секунди</p>
                 </div>
 
                 <div class="why-card" data-aos="fade-up" data-aos-delay="300">
@@ -169,7 +180,7 @@
                     <div class="why-icon">
                         <i class="fa-solid fa-palette"></i>
                     </div>
-                    <h3>Налаштуй під себе</h3>
+                    <h3>Налаштуйте під себе</h3>
                     <p>Темна та світла теми, гнучкі налаштування інтерфейсу та сповіщень</p>
                 </div>
 
@@ -186,7 +197,7 @@
                         <i class="fa-solid fa-handshake"></i>
                     </div>
                     <h3>Зручна співпраця</h3>
-                    <p>Легко додавай свої переклади до лаунчера та співпрацюй з іншими командами</p>
+                    <p>Легко додавайте свої переклади до лаунчера та співпрацюйте з іншими командами</p>
                 </div>
             </div>
         </div>
@@ -194,15 +205,15 @@
 
     <section id="collaboration" class="collaboration-sec">
         <div class="container">
-            <h2 class="section-title center" data-aos="fade-up">Приєднуйся до спільноти</h2>
+            <h2 class="section-title center" data-aos="fade-up">Приєднуйтесь до спільноти</h2>
 
             <div class="collab-grid">
                 <div class="collab-card" data-aos="fade-up" data-aos-delay="0">
                     <div class="collab-icon">
                         <i class="fa-solid fa-rocket"></i>
                     </div>
-                    <h3>Додай свою гру</h3>
-                    <p>Український переклад твоєї гри буде доступний тисячам користувачів з першого дня</p>
+                    <h3>Додайте свою гру</h3>
+                    <p>Український переклад вашої гри буде доступний тисячам користувачів з першого дня</p>
                 </div>
 
                 <div class="collab-card" data-aos="fade-up" data-aos-delay="100">
@@ -210,7 +221,7 @@
                         <i class="fa-solid fa-users"></i>
                     </div>
                     <h3>Велика спільнота</h3>
-                    <p>Приєднуйся до команди перекладачів, які вже довіряють LB Launcher</p>
+                    <p>Приєднуйтесь до команди перекладачів, які вже довіряють LB Launcher</p>
                 </div>
 
                 <div class="collab-card" data-aos="fade-up" data-aos-delay="200">
@@ -223,12 +234,80 @@
             </div>
 
             <div class="collab-cta" data-aos="fade-up" data-aos-delay="300">
-                <h3>Готовий почати співпрацю?</h3>
-                <p>Напиши нам у Telegram, і ми обговоримо всі деталі додавання твоєї гри</p>
+                <h3>Готові почати співпрацю?</h3>
+                <p>Напишіть нам у Telegram, і ми обговоримо всі деталі додавання вашої гри</p>
                 <a href="https://t.me/lb_launcher_bot" target="_blank" class="contact-btn-large">
                     <i class="fa-brands fa-telegram"></i>
                     Написати в Telegram
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-sec">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">Часті питання</h2>
+
+            <div class="faq-list">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
+                    <button class="faq-question">
+                        <span>Як це працює?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Все дуже просто: завантажте лаунчер, він автоматично знайде встановлені ігри на вашому комп'ютері, оберіть потрібну гру та натисніть "Встановити переклад". Готово!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+                    <button class="faq-question">
+                        <span>Чи безпечно використовувати LB Launcher?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Так, абсолютно безпечно. Код лаунчера повністю відкритий на GitHub, тому кожен може перевірити його безпеку. Крім того, перед встановленням перекладу автоматично створюється резервна копія оригінальних файлів.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-question">
+                        <span>Як видалити переклад і повернути оригінал?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Оберіть гру в лаунчері та натисніть кнопку "Видалити переклад". Лаунчер автоматично відновить оригінальні файли з резервної копії.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                    <button class="faq-question">
+                        <span>Які ігри підтримуються?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Наразі підтримується понад 150 ігор, і цей список постійно поповнюється. Серед них: популярні AAA-тайтли, інді-ігри та класика. Повний список доступний у самому лаунчері.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <button class="faq-question">
+                        <span>Лаунчер безкоштовний?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Так, LB Launcher повністю безкоштовний і таким залишиться назавжди. Ми робимо це для української спільноти геймерів.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                    <button class="faq-question">
+                        <span>Як додати свій переклад до лаунчера?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Напишіть нам у Telegram через бота @lb_launcher_bot. Ми обговоримо деталі та допоможемо інтегрувати ваш переклад. Це швидко і просто!</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -238,6 +317,11 @@
             <p>&copy; 2025 LB Launcher Team. Made with <i class="fa-solid fa-heart highlight"></i> in Ukraine.</p>
         </div>
     </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-top" id="scroll-top" title="Наверх">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <!-- Lightbox для галереї -->
     <div class="lightbox" id="lightbox">
@@ -257,6 +341,7 @@
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

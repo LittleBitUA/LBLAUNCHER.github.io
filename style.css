@@ -61,6 +61,36 @@ body {
     }
 }
 
+/* Particles.js Background */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* Typewriter Effect */
+.typewriter {
+    display: inline-block;
+    min-width: 280px;
+}
+
+.typewriter::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+    color: var(--accent-blue);
+    font-weight: 300;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
 /* Typography */
 h1 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
 h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; }
@@ -977,6 +1007,173 @@ a { text-decoration: none; color: white; transition: 0.3s; }
 
 .contact-btn-large i {
     font-size: 1.5rem;
+}
+
+/* FAQ Section */
+.faq-sec {
+    padding: 100px 0;
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(0, 194, 255, 0.3);
+}
+
+.faq-item.active {
+    border-color: rgba(0, 194, 255, 0.5);
+    box-shadow: 0 5px 30px rgba(0, 194, 255, 0.15);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 24px 30px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--accent-blue);
+}
+
+.faq-question i {
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+}
+
+.faq-answer p {
+    padding: 0 30px 24px;
+    color: var(--text-sec);
+    line-height: 1.8;
+}
+
+/* Scroll Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 5px 25px rgba(0, 194, 255, 0.4);
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0, 194, 255, 0.6);
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-base);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-content {
+    text-align: center;
+}
+
+.preloader-logo {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    animation: pulse-logo 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-logo {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+.preloader-spinner {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--accent-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Footer */

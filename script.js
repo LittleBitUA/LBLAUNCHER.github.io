@@ -409,3 +409,202 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') showPrevImage();
     if (e.key === 'ArrowRight') showNextImage();
 });
+
+// --- FAQ Accordion ---
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+
+    question.addEventListener('click', () => {
+        // Закриваємо інші відкриті елементи
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+                otherItem.classList.remove('active');
+            }
+        });
+
+        // Перемикаємо поточний елемент
+        item.classList.toggle('active');
+    });
+});
+
+// --- Кнопка "Наверх" ---
+const scrollTopBtn = document.getElementById('scroll-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+        scrollTopBtn.classList.add('visible');
+    } else {
+        scrollTopBtn.classList.remove('visible');
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// --- Preloader ---
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+
+    // Невелика затримка для плавності
+    setTimeout(() => {
+        preloader.classList.add('hidden');
+
+        // Видаляємо preloader з DOM після анімації
+        setTimeout(() => {
+            preloader.remove();
+        }, 500);
+    }, 500);
+});
+
+// --- Parallax Effect for Orbs ---
+const orb1 = document.querySelector('.orb-1');
+const orb2 = document.querySelector('.orb-2');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    if (orb1) {
+        orb1.style.transform = `translateY(${scrollY * 0.3}px)`;
+    }
+    if (orb2) {
+        orb2.style.transform = `translateY(${scrollY * -0.2}px)`;
+    }
+});
+
+// --- Typewriter Effect ---
+const typewriterElement = document.getElementById('typewriter');
+const phrases = [
+    'рідною мовою!',
+    'українською!',
+    'без зусиль!',
+    'в один клік!'
+];
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typewriterTimeout;
+
+function typeWriter() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (isDeleting) {
+        // Видалення символів
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        // Додавання символів
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    // Швидкість друку/видалення
+    let delay = isDeleting ? 50 : 100;
+
+    // Логіка переходу
+    if (!isDeleting && charIndex === currentPhrase.length) {
+        // Пауза після завершення слова
+        delay = 2000;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        delay = 500;
+    }
+
+    typewriterTimeout = setTimeout(typeWriter, delay);
+}
+
+// Запуск typewriter після завантаження
+if (typewriterElement) {
+    setTimeout(typeWriter, 1000);
+}
+
+// --- Particles.js Configuration ---
+if (typeof particlesJS !== 'undefined') {
+    particlesJS('particles-js', {
+        particles: {
+            number: {
+                value: 30,
+                density: {
+                    enable: true,
+                    value_area: 1000
+                }
+            },
+            color: {
+                value: ['#00C2FF', '#BD00FF']
+            },
+            shape: {
+                type: 'circle'
+            },
+            opacity: {
+                value: 0.12,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 0.3,
+                    opacity_min: 0.05,
+                    sync: false
+                }
+            },
+            size: {
+                value: 2,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 1,
+                    size_min: 0.5,
+                    sync: false
+                }
+            },
+            line_linked: {
+                enable: true,
+                distance: 180,
+                color: '#00C2FF',
+                opacity: 0.06,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 0.5,
+                direction: 'none',
+                random: true,
+                straight: false,
+                out_mode: 'out',
+                bounce: false,
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: 'grab'
+                },
+                onclick: {
+                    enable: false
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 120,
+                    line_linked: {
+                        opacity: 0.2
+                    }
+                }
+            }
+        },
+        retina_detect: true
+    });
+}
