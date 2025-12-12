@@ -1,16 +1,41 @@
 :root {
-    /* Нова палітра "Deep Space" */
+    /* Темна тема (Deep Space) - за замовчуванням */
     --bg-base: #0b0c15;
     --bg-gradient: linear-gradient(135deg, #0b0c15 0%, #15162c 100%);
-    
+
     --accent-blue: #00C2FF;
     --accent-purple: #BD00FF;
-    
+
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.08);
-    
+
     --text-primary: #ffffff;
     --text-sec: #a0a5b5;
+
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --navbar-bg: rgba(11, 12, 21, 0.8);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --orb-opacity: 0.2;
+}
+
+/* Світла тема */
+[data-theme="light"] {
+    --bg-base: #f5f7fa;
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+
+    --accent-blue: #0095cc;
+    --accent-purple: #9000cc;
+
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.08);
+
+    --text-primary: #1a1a2e;
+    --text-sec: #5a5f7a;
+
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --navbar-bg: rgba(245, 247, 250, 0.9);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --orb-opacity: 0.15;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,6 +47,12 @@ body {
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Плавне перемикання теми */
+body *, body *::before, body *::after {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* --- Живий фон (Orbs) --- */
@@ -30,8 +61,9 @@ body {
     border-radius: 50%;
     filter: blur(180px);
     z-index: -1;
-    opacity: 0.2;
+    opacity: var(--orb-opacity);
     pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 .orb-1 {
     width: 500px; height: 500px;
@@ -123,8 +155,9 @@ a { text-decoration: none; color: white; transition: 0.3s; }
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(12px);
-    background: rgba(11, 12, 21, 0.7);
+    background: var(--navbar-bg);
     border-bottom: 1px solid var(--glass-border);
+    transition: background 0.3s ease;
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
 .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 0.5px; }
@@ -151,6 +184,35 @@ a { text-decoration: none; color: white; transition: 0.3s; }
 .nav-socials a:hover {
     color: var(--accent-blue);
 }
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-sec);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-left: 8px;
+}
+
+.theme-toggle:hover {
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    transform: rotate(15deg);
+}
+
+.theme-toggle .fa-sun { display: none; }
+.theme-toggle .fa-moon { display: block; }
+
+[data-theme="light"] .theme-toggle .fa-sun { display: block; }
+[data-theme="light"] .theme-toggle .fa-moon { display: none; }
 
 /* Hero Section */
 .hero {
@@ -878,6 +940,16 @@ a { text-decoration: none; color: white; transition: 0.3s; }
     box-shadow: 0 8px 25px rgba(100, 100, 100, 0.4);
 }
 
+[data-theme="light"] .collab-btn.github {
+    background: linear-gradient(90deg, #e8e8e8, #f5f5f5);
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+[data-theme="light"] .collab-btn.github:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 /* FAQ Section */
 .faq-sec {
     padding: 100px 0;
@@ -1074,6 +1146,10 @@ footer {
     padding: 30px 0;
     text-align: center;
     background: rgba(0,0,0,0.2);
+}
+
+[data-theme="light"] footer {
+    background: rgba(0,0,0,0.05);
 }
 
 /* Responsive */

@@ -1,3 +1,36 @@
+// --- Theme Toggle ---
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+// Перевіряємо збережену тему (темна за замовчуванням)
+function getPreferredTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) return savedTheme;
+    return 'dark';
+}
+
+// Застосовуємо тему
+function applyTheme(theme) {
+    if (theme === 'light') {
+        html.setAttribute('data-theme', 'light');
+    } else {
+        html.removeAttribute('data-theme');
+    }
+    localStorage.setItem('theme', theme);
+}
+
+// Ініціалізуємо тему при завантаженні
+applyTheme(getPreferredTheme());
+
+// Перемикання теми при кліку
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(newTheme);
+    });
+}
+
 // Ініціалізація анімацій
 AOS.init({
     duration: 800,
