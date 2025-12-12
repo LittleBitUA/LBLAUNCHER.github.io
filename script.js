@@ -256,12 +256,48 @@ function updateDownloadButtons() {
     }
 }
 
+// --- Конфеті при завантаженні ---
+function fireConfetti() {
+    if (typeof confetti === 'undefined') return;
+
+    // Вибух конфеті з двох сторін
+    const colors = ['#00C2FF', '#BD00FF', '#FFD700', '#FF6B6B', '#4ECDC4'];
+
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { x: 0.3, y: 0.6 },
+        colors: colors
+    });
+
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { x: 0.7, y: 0.6 },
+        colors: colors
+    });
+}
+
 // Запускаємо при завантаженні сторінки
 document.addEventListener('DOMContentLoaded', () => {
     // Спочатку встановлюємо fallback посилання, щоб кнопки працювали одразу
     updateDownloadButtons();
     // Потім завантажуємо актуальні посилання з GitHub
     fetchLatestRelease();
+
+    // Додаємо конфеті на всі кнопки завантаження з затримкою переходу
+    const downloadBtns = document.querySelectorAll('.dl-btn, .dl-mini');
+    downloadBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            fireConfetti();
+
+            const href = btn.href;
+            setTimeout(() => {
+                window.open(href, '_blank');
+            }, 800);
+        });
+    });
 });
 
 

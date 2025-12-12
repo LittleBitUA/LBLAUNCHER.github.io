@@ -325,6 +325,20 @@ a { text-decoration: none; color: white; transition: 0.3s; }
     box-shadow: 0 0 15px rgba(189, 0, 255, 0.2);
 }
 
+/* Світла тема - міні кнопки */
+[data-theme="light"] .dl-mini {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #333;
+}
+
+[data-theme="light"] .dl-mini.active,
+[data-theme="light"] .dl-mini:hover {
+    border-color: var(--accent-purple);
+    color: var(--accent-purple);
+    background: rgba(189, 0, 255, 0.1);
+}
+
 /* Stats */
 .stats-mini {
     margin-top: 40px;
