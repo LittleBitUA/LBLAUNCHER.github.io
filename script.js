@@ -454,19 +454,24 @@ scrollTopBtn.addEventListener('click', () => {
 });
 
 // --- Preloader ---
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
+const preloader = document.getElementById('preloader');
 
-    // Невелика затримка для плавності
-    setTimeout(() => {
+function hidePreloader() {
+    if (preloader && !preloader.classList.contains('hidden')) {
         preloader.classList.add('hidden');
-
-        // Видаляємо preloader з DOM після анімації
         setTimeout(() => {
             preloader.remove();
         }, 500);
-    }, 500);
+    }
+}
+
+// Ховаємо після завантаження
+window.addEventListener('load', () => {
+    setTimeout(hidePreloader, 500);
 });
+
+// Гарантовано ховаємо через 3 секунди (на випадок багу)
+setTimeout(hidePreloader, 3000);
 
 // --- Parallax Effect for Orbs (тільки на десктопі) ---
 const orb1 = document.querySelector('.orb-1');
