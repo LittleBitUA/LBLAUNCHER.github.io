@@ -23,10 +23,16 @@ async function fetchLatestRelease() {
         const latestData = await latestResponse.json();
         downloadLinks.version = latestData.tag_name.replace('v', '');
         
-        // Оновлюємо badge з версією
+        // Оновлюємо badge з версією та датою
         const versionText = document.getElementById('version-text');
         if (versionText) {
-            versionText.textContent = `${latestData.tag_name} Вже доступна`;
+            const releaseDate = new Date(latestData.published_at);
+            const formattedDate = releaseDate.toLocaleDateString('uk-UA', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+            versionText.textContent = `Версія ${latestData.tag_name} від ${formattedDate}`;
         }
         
         // Отримуємо всі релізи для підрахунку загальних завантажень
