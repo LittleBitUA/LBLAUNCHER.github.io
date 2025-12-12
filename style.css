@@ -943,13 +943,36 @@ a { text-decoration: none; color: white; transition: 0.3s; }
 }
 
 .faq-item.active .faq-answer {
-    max-height: 300px;
+    max-height: 500px;
 }
 
 .faq-answer p {
     padding: 0 30px 24px;
     color: var(--text-sec);
     line-height: 1.8;
+}
+
+/* Tech Stack List in FAQ */
+.tech-stack {
+    list-style: none;
+    padding: 0 30px 24px;
+    margin: 0;
+}
+
+.tech-stack li {
+    padding: 8px 0;
+    color: var(--text-sec);
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tech-stack li:last-child {
+    border-bottom: none;
+}
+
+.tech-stack li strong {
+    color: var(--accent-blue);
+    font-weight: 600;
 }
 
 /* Scroll Top Button */
@@ -1094,25 +1117,8 @@ footer {
     }
 
     .hero-visual {
-        width: 100%;
-        height: auto;
-        min-height: 250px;
-        margin-top: 30px;
+        display: none;
     }
-
-    .hero-img {
-        width: 90%;
-        max-width: 100%;
-        position: relative;
-        transform: none !important;
-    }
-
-    .main-shot {
-        position: relative;
-        width: 100%;
-    }
-
-    .back-shot { display: none; }
 
     .download-row {
         flex-direction: column;
