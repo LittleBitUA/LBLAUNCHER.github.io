@@ -483,10 +483,10 @@ if (isDesktop) {
 // --- Typewriter Effect ---
 const typewriterElement = document.getElementById('typewriter');
 const phrases = [
-    'рідною мовою!',
-    'українською!',
     'без зусиль!',
-    'в один клац!'
+    'в один клац!',
+    'це просто!',
+    'це топ!'
 ];
 let phraseIndex = 0;
 let charIndex = 0;
