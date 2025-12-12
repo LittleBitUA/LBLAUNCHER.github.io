@@ -526,85 +526,68 @@ if (typewriterElement) {
 }
 
 // --- Particles.js Configuration ---
-if (typeof particlesJS !== 'undefined') {
+// Вимикаємо на мобільних для продуктивності
+const isMobile = window.innerWidth < 768;
+
+if (typeof particlesJS !== 'undefined' && !isMobile) {
     particlesJS('particles-js', {
         particles: {
             number: {
-                value: 30,
+                value: 20,
                 density: {
                     enable: true,
-                    value_area: 1000
+                    value_area: 1200
                 }
             },
             color: {
-                value: ['#00C2FF', '#BD00FF']
+                value: '#00C2FF'
             },
             shape: {
                 type: 'circle'
             },
             opacity: {
-                value: 0.12,
-                random: true,
+                value: 0.3,
+                random: false,
                 anim: {
-                    enable: true,
-                    speed: 0.3,
-                    opacity_min: 0.05,
-                    sync: false
+                    enable: false
                 }
             },
             size: {
                 value: 2,
                 random: true,
                 anim: {
-                    enable: true,
-                    speed: 1,
-                    size_min: 0.5,
-                    sync: false
+                    enable: false
                 }
             },
             line_linked: {
                 enable: true,
-                distance: 180,
+                distance: 150,
                 color: '#00C2FF',
-                opacity: 0.06,
+                opacity: 0.15,
                 width: 1
             },
             move: {
                 enable: true,
-                speed: 0.5,
+                speed: 0.3,
                 direction: 'none',
-                random: true,
+                random: false,
                 straight: false,
                 out_mode: 'out',
-                bounce: false,
-                attract: {
-                    enable: false,
-                    rotateX: 600,
-                    rotateY: 1200
-                }
+                bounce: false
             }
         },
         interactivity: {
             detect_on: 'canvas',
             events: {
                 onhover: {
-                    enable: true,
-                    mode: 'grab'
+                    enable: false
                 },
                 onclick: {
                     enable: false
                 },
                 resize: true
-            },
-            modes: {
-                grab: {
-                    distance: 120,
-                    line_linked: {
-                        opacity: 0.2
-                    }
-                }
             }
         },
-        retina_detect: true
+        retina_detect: false
     });
 }
