@@ -283,6 +283,49 @@ section {
     margin: 0 auto 60px;
 }
 
+/* --- Scroll to Top Button --- */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 25px rgba(233, 30, 140, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.8);
+    transition: all var(--transition);
+    z-index: 998;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 35px rgba(233, 30, 140, 0.5);
+}
+
+.scroll-top:active {
+    transform: translateY(-2px) scale(1.05);
+}
+
+.scroll-top svg {
+    width: 36px;
+    height: 36px;
+    fill: white;
+}
+
 /* --- Animations --- */
 @keyframes float {
     0%, 100% { transform: translateY(0); }

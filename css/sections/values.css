@@ -1,0 +1,100 @@
+/* ===========================
+   Values Section
+   =========================== */
+
+.values {
+    background: var(--bg-primary);
+}
+
+.values-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.value-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 35px 25px;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition);
+    text-align: center;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--pink);
+}
+
+.value-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 5px 25px rgba(233, 30, 140, 0.3);
+}
+
+.value-card:nth-child(2) .value-icon {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--cyan) 100%);
+    box-shadow: 0 5px 25px rgba(155, 89, 182, 0.3);
+}
+
+.value-card:nth-child(3) .value-icon {
+    background: linear-gradient(135deg, var(--green) 0%, var(--cyan) 100%);
+    box-shadow: 0 5px 25px rgba(126, 211, 33, 0.3);
+}
+
+.value-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.value-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.value-list {
+    text-align: left;
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.value-list li {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.value-list li::marker {
+    color: var(--pink);
+}
+
+@media (max-width: 900px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .value-card {
+        padding: 30px 20px;
+    }
+}

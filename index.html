@@ -23,16 +23,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/sections/hero.css">
-    <link rel="stylesheet" href="css/sections/about.css">
-    <link rel="stylesheet" href="css/sections/projects.css">
-    <link rel="stylesheet" href="css/sections/team.css">
-    <link rel="stylesheet" href="css/sections/support.css">
-    <link rel="stylesheet" href="css/sections/social.css">
-    <link rel="stylesheet" href="css/sections/faq.css">
-    <link rel="stylesheet" href="css/sections/join.css">
-    <link rel="stylesheet" href="css/sections/footer.css">
+    <link rel="stylesheet" href="css/style.css?v=1.0.0">
+    <link rel="stylesheet" href="css/sections/hero.css?v=1.0.0">
+    <link rel="stylesheet" href="css/sections/about.css?v=1.0.0">
+    <link rel="stylesheet" href="css/sections/projects.css?v=1.0.0">
+    <link rel="stylesheet" href="css/sections/team.css?v=1.0.0">
+    <link rel="stylesheet" href="css/sections/support.css?v=1.0.0">
+    <link rel="stylesheet" href="css/sections/social.css?v=1.0.0">
+    <link rel="stylesheet" href="css/sections/faq.css?v=1.0.0">
+    <link rel="stylesheet" href="css/sections/values.css?v=1.0.0">
+    <link rel="stylesheet" href="css/sections/join.css?v=1.0.0">
+    <link rel="stylesheet" href="css/sections/footer.css?v=1.0.0">
 </head>
 <body>
     <!-- Theme Toggle -->
@@ -53,6 +54,7 @@
                 <li><a href="#about">Про нас</a></li>
                 <li><a href="#projects">Проєкти</a></li>
                 <li><a href="#team">Команда</a></li>
+                <li><a href="#values">Цінності</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#join">Долучитись</a></li>
                 <li><a href="#support">Підтримати</a></li>
@@ -121,25 +123,8 @@
     <section class="projects" id="projects">
         <h2 class="section-title">Наші <span>проєкти</span></h2>
         <p class="section-subtitle">Ігри, які ми локалізували з любов'ю для української спільноти</p>
-        <div class="projects-grid">
-            <div class="project-card fade-in">
-                <div class="project-image">
-                    <span class="project-placeholder">🐺</span>
-                </div>
-                <div class="project-content">
-                    <span class="project-badge">Завершено</span>
-                    <h3 class="project-title">The Wolf Among Us</h3>
-                    <p class="project-description">
-                        Повна українська локалізація обох епізодів культової пригодницької гри від Telltale Games. Зануртеся у темний світ казкових персонажів рідною мовою!
-                    </p>
-                    <div class="project-tags">
-                        <span class="project-tag">Епізод 1</span>
-                        <span class="project-tag">Епізод 2</span>
-                        <span class="project-tag">Adventure</span>
-                        <span class="project-tag">Telltale</span>
-                    </div>
-                </div>
-            </div>
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Games will be loaded from games.json -->
         </div>
     </section>
 
@@ -147,6 +132,143 @@
     <section class="team" id="team">
         <h2 class="section-title">Наша <span>команда</span></h2>
         <p class="section-subtitle">Ентузіастки, об'єднані спільною метою</p>
+
+        <!-- Team Carousel -->
+        <div class="team-carousel-wrapper">
+            <div class="team-carousel" id="teamCarousel">
+                <!-- Team members will be duplicated for infinite scroll -->
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">👩‍💼</div>
+                    </div>
+                    <div class="team-name">Віка</div>
+                    <div class="team-role">Начальниця</div>
+                    <div class="team-info">Координує роботу команди</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">👩‍💻</div>
+                    </div>
+                    <div class="team-name">Аня</div>
+                    <div class="team-role">Заступниця</div>
+                    <div class="team-info">Заступниця начальниці</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">💻</div>
+                    </div>
+                    <div class="team-name">Марина</div>
+                    <div class="team-role">Програмістка</div>
+                    <div class="team-info">Технічна реалізація</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">📝</div>
+                    </div>
+                    <div class="team-name">Оля</div>
+                    <div class="team-role">Перекладачка</div>
+                    <div class="team-info">Переклад текстів</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">✏️</div>
+                    </div>
+                    <div class="team-name">Катя</div>
+                    <div class="team-role">Редакторка</div>
+                    <div class="team-info">Редагування та коректура</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">🎨</div>
+                    </div>
+                    <div class="team-name">Даша</div>
+                    <div class="team-role">Текстурниця</div>
+                    <div class="team-info">Робота з текстурами</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">🐛</div>
+                    </div>
+                    <div class="team-name">Юля</div>
+                    <div class="team-role">Тестувальниця</div>
+                    <div class="team-info">Тестування локалізацій</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">📱</div>
+                    </div>
+                    <div class="team-name">Соня</div>
+                    <div class="team-role">SMM</div>
+                    <div class="team-info">Соціальні мережі</div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">👩‍💼</div>
+                    </div>
+                    <div class="team-name">Віка</div>
+                    <div class="team-role">Начальниця</div>
+                    <div class="team-info">Координує роботу команди</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">👩‍💻</div>
+                    </div>
+                    <div class="team-name">Аня</div>
+                    <div class="team-role">Заступниця</div>
+                    <div class="team-info">Заступниця начальниці</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">💻</div>
+                    </div>
+                    <div class="team-name">Марина</div>
+                    <div class="team-role">Програмістка</div>
+                    <div class="team-info">Технічна реалізація</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">📝</div>
+                    </div>
+                    <div class="team-name">Оля</div>
+                    <div class="team-role">Перекладачка</div>
+                    <div class="team-info">Переклад текстів</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">✏️</div>
+                    </div>
+                    <div class="team-name">Катя</div>
+                    <div class="team-role">Редакторка</div>
+                    <div class="team-info">Редагування та коректура</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">🎨</div>
+                    </div>
+                    <div class="team-name">Даша</div>
+                    <div class="team-role">Текстурниця</div>
+                    <div class="team-info">Робота з текстурами</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">🐛</div>
+                    </div>
+                    <div class="team-name">Юля</div>
+                    <div class="team-role">Тестувальниця</div>
+                    <div class="team-info">Тестування локалізацій</div>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <div class="team-avatar-placeholder">📱</div>
+                    </div>
+                    <div class="team-name">Соня</div>
+                    <div class="team-role">SMM</div>
+                    <div class="team-info">Соціальні мережі</div>
+                </div>
+            </div>
+        </div>
+
         <div class="team-content">
             <p class="team-quote">
                 Ми віримо, що кожен українець заслуговує грати в ігри рідною мовою. Наша робота - це не просто переклад, це любов до геймінгу та української культури.
@@ -182,6 +304,35 @@
                 <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                 Підтримати через Monobank
             </a>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values" id="values">
+        <h2 class="section-title">Наші <span>цінності</span></h2>
+        <p class="section-subtitle">Принципи, які визначають нашу роботу та спільноту</p>
+        <div class="values-grid">
+            <div class="value-card fade-in">
+                <div class="value-icon">🇺🇦</div>
+                <h3 class="value-title">Український націоналізм</h3>
+                <p class="value-description">
+                    Розвиток національної свідомості та українізація суспільства є для нас надважливими. Ми українізуємо ігровий простір та підтримуємо ЗСУ, волонтерів і постраждалих від агресії.
+                </p>
+            </div>
+            <div class="value-card fade-in">
+                <div class="value-icon">♀️</div>
+                <h3 class="value-title">Фемінізм</h3>
+                <p class="value-description">
+                    Ми створені як безпечний жіночий простір. Пріоритизуємо розвиток жінок у геймінгу, відкрито підтримуємо фемінізм, використовуємо фемінітиви та активно протидіємо мізогінії.
+                </p>
+            </div>
+            <div class="value-card fade-in">
+                <div class="value-icon">🌈</div>
+                <h3 class="value-title">Відсутність дискримінації</h3>
+                <p class="value-description">
+                    Ми проти гомофобії, сексизму, ейблізму, ейджизму та будь-яких форм дискримінації. Україна має бути комфортним місцем, де кожен почувається однаково безпечно.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -298,6 +449,33 @@
         </div>
     </section>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="Прокрутити вгору">
+        <svg viewBox="0 0 100 100" fill="currentColor">
+            <!-- Sitting cat with arrow -->
+            <!-- Cat body (sitting) -->
+            <ellipse cx="38" cy="75" rx="20" ry="18"/>
+            <!-- Cat head -->
+            <circle cx="38" cy="45" r="18"/>
+            <!-- Cat ears -->
+            <path d="M24 35 L18 15 L32 28 Z"/>
+            <path d="M52 35 L58 15 L44 28 Z"/>
+            <!-- Cat eyes -->
+            <circle cx="32" cy="43" r="3.5" fill="white"/>
+            <circle cx="44" cy="43" r="3.5" fill="white"/>
+            <circle cx="33" cy="44" r="1.8" fill="#333"/>
+            <circle cx="45" cy="44" r="1.8" fill="#333"/>
+            <!-- Cat nose -->
+            <ellipse cx="38" cy="50" rx="2.5" ry="1.8" fill="#FFB6C1"/>
+            <!-- Cat tail -->
+            <path d="M18 78 Q5 70 8 55" stroke="currentColor" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <!-- Cat paw holding arrow -->
+            <ellipse cx="58" cy="68" rx="6" ry="4"/>
+            <!-- Arrow up (in cat's paw) -->
+            <path d="M70 25 L60 40 L66 40 L66 72 L74 72 L74 40 L80 40 Z" fill="white" opacity="0.95"/>
+        </svg>
+    </button>
+
     <!-- Footer -->
     <footer>
         <img src="assets/catloc2.png" alt="CatLocTeam" class="footer-logo">
@@ -307,6 +485,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=1.0.0"></script>
 </body>
 </html>
