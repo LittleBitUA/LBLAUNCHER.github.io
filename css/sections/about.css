@@ -1,9 +1,9 @@
 /* ===========================
-   About Section
+   About Section (Pixel Style)
    =========================== */
 
 .about {
-    background: var(--bg-secondary);
+    background: transparent;
 }
 
 .about-grid {
@@ -11,48 +11,63 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 25px;
 }
 
 .about-card {
     background: var(--bg-card);
-    border-radius: 20px;
-    padding: 40px 30px;
+    border-radius: 4px;
+    padding: 35px 25px;
     text-align: center;
-    border: 1px solid var(--border-color);
+    border: var(--pixel-border) solid var(--pink);
     transition: all var(--transition);
+    box-shadow: 4px 4px 0 var(--pink-dark);
 }
 
 .about-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hover);
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 var(--pink-dark);
     background: var(--bg-card-hover);
 }
 
 .about-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 25px;
-    background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
-    border-radius: 20px;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: var(--pink);
+    border-radius: 4px;
+    border: 2px solid var(--pink-dark);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all var(--transition);
+}
+
+.about-card:hover .about-icon {
+    animation: pixelBounce 0.5s ease infinite;
+}
+
+@keyframes pixelBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
 .about-icon svg {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     fill: white;
 }
 
 .about-card h3 {
-    font-size: 1.4rem;
+    font-size: 0.7rem;
     margin-bottom: 15px;
-    color: var(--text-primary);
+    color: var(--pink);
+    font-family: var(--font-pixel);
+    text-transform: uppercase;
 }
 
 .about-card p {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.8;
 }

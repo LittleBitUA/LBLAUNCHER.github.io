@@ -45,6 +45,10 @@
     background: linear-gradient(135deg, #1DA1F2 0%, #0D8BD9 100%);
 }
 
+.social-link.tiktok {
+    background: #1a1a1a;
+}
+
 .social-link:hover {
     transform: translateY(-8px) scale(1.1);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
