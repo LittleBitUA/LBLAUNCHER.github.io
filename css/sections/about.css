@@ -71,3 +71,10 @@
     font-size: 0.85rem;
     line-height: 1.8;
 }
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
