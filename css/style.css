@@ -115,43 +115,47 @@ h1, h2, h3, .section-title, .nav-logo span {
 }
 
 
+/* --- Nav Controls Container --- */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 /* --- Theme Toggle (Pixel Style) --- */
 .theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
+    position: relative;
     background: var(--bg-card);
     border: var(--pixel-border) solid var(--pink);
     border-radius: 4px;
-    padding: 8px 16px;
+    padding: 6px 12px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     transition: all var(--transition);
-    box-shadow: 4px 4px 0 var(--pink-dark);
+    box-shadow: 3px 3px 0 var(--pink-dark);
     font-family: var(--font-pixel);
 }
 
 .theme-toggle:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 var(--pink-dark);
+    box-shadow: 5px 5px 0 var(--pink-dark);
 }
 
 .theme-toggle:active {
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 var(--pink-dark);
+    box-shadow: 1px 1px 0 var(--pink-dark);
 }
 
 .theme-toggle svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     fill: var(--pink);
 }
 
 .theme-toggle span {
-    font-size: 8px;
+    font-size: 7px;
     font-weight: 400;
     color: var(--text-primary);
     font-family: var(--font-pixel);
@@ -164,36 +168,33 @@ h1, h2, h3, .section-title, .nav-logo span {
 
 /* --- Language Toggle (Pixel Style) --- */
 .lang-toggle {
-    position: fixed;
-    top: 20px;
-    right: 130px;
-    z-index: 1000;
+    position: relative;
     background: var(--bg-card);
     border: var(--pixel-border) solid var(--green);
     border-radius: 4px;
-    padding: 6px 12px;
+    padding: 6px 10px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     transition: all var(--transition);
-    box-shadow: 4px 4px 0 #5a9a18;
+    box-shadow: 3px 3px 0 #5a9a18;
     font-family: var(--font-pixel);
 }
 
 .lang-toggle:hover {
     transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 #5a9a18;
+    box-shadow: 5px 5px 0 #5a9a18;
     border-color: var(--pink);
 }
 
 .lang-toggle:active {
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 #5a9a18;
+    box-shadow: 1px 1px 0 #5a9a18;
 }
 
 .lang-flag {
-    font-size: 14px;
+    font-size: 12px;
     opacity: 0.4;
     transition: opacity var(--transition);
 }
@@ -203,19 +204,11 @@ h1, h2, h3, .section-title, .nav-logo span {
 }
 
 .lang-text {
-    font-size: 8px;
+    font-size: 7px;
     font-weight: 400;
     color: var(--text-primary);
-    min-width: 20px;
+    min-width: 18px;
     font-family: var(--font-pixel);
-}
-
-@media (max-width: 768px) {
-    .lang-toggle {
-        top: auto;
-        bottom: 160px;
-        right: 20px;
-    }
 }
 
 /* --- Navigation (Pixel Style) --- */
@@ -528,10 +521,33 @@ section {
         display: block;
     }
 
-    .theme-toggle {
-        top: auto;
-        bottom: 100px;
-        right: 20px;
+    .nav-controls {
+        gap: 8px;
+        margin-right: 10px;
+    }
+
+    .theme-toggle,
+    .lang-toggle {
+        padding: 5px 8px;
+        box-shadow: 2px 2px 0 var(--pink-dark);
+    }
+
+    .lang-toggle {
+        box-shadow: 2px 2px 0 #5a9a18;
+    }
+
+    .theme-toggle span,
+    .lang-text {
+        display: none;
+    }
+
+    .theme-toggle svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .lang-flag {
+        font-size: 14px;
     }
 
     .scroll-top {
