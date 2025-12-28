@@ -20,7 +20,7 @@ const FALLBACK_TRANSLATIONS = {
         theme: { label: "Тема" },
         hero: { title: "CatLocTeam", subtitle: "Жіноча аматорська команда локалізації ігор", description: "Ми - котяча команда ентузіасток, які працюють день і ніч, щоб українські геймери могли насолоджуватися іграми рідною мовою", btnProjects: "Наші проєкти", btnSupport: "Підтримати" },
         about: { title: "Чим ми <span>займаємось</span>", subtitle: "Наша місія - зробити ігровий світ доступнішим для українців", localization: { title: "Локалізація", description: "Повний переклад ігор українською мовою з збереженням атмосфери та характеру персонажів" }, technical: { title: "Технічна робота", description: "Інтеграція перекладів у гри, адаптація шрифтів та інтерфейсу для української мови" }, quality: { title: "Якість", description: "Ретельна перевірка кожного рядка тексту та тестування на різних платформах" } },
-        projects: { title: "Наші <span>проєкти</span>", subtitle: "Ігри, які ми локалізували з любов'ю для української спільноти", download: "Завантажити", statusCompleted: "Завершено", statusComing: "Скоро" },
+        projects: { title: "Наші <span>проєкти</span>", subtitle: "Ігри, які ми локалізували з любов'ю для української спільноти", download: "Завантажити", statusCompleted: "Завершено", statusComing: "Скоро", games: { "wolf-among-us": { title: "The Wolf Among Us", description: "Повна українська локалізація обох епізодів культової пригодницької гри від Telltale Games. Зануртеся у темний світ казкових персонажів рідною мовою!", tags: ["Епізод 1", "Епізод 2", "Adventure", "Telltale"] }, "coming-soon": { title: "Скоро", description: "Нова локалізація вже в розробці. Слідкуйте за оновленнями на наших соціальних мережах!", tags: ["В розробці"] } } },
         team: { title: "Наша <span>команда</span>", subtitle: "Ентузіастки, об'єднані спільною метою", quote: "Ми віримо, що кожен українець заслуговує грати в ігри рідною мовою. Наша робота - це не просто переклад, це любов до геймінгу та української культури.", stats: { projects: "Завершених проєкти", working: "Працюємо для вас", love: "Любові до справи" } },
         support: { title: "Підтримайте <span>команду</span>", subtitle: "Ваша підтримка допомагає нам створювати нові локалізації", cardTitle: "Донат на розвиток", cardDescription: "Кожна гривня наближає нас до нових перекладів та покращення якості існуючих робіт", btnDonate: "Підтримати через Monobank" },
         values: { title: "Наші <span>цінності</span>", subtitle: "Принципи, які визначають нашу роботу та спільноту", nationalism: { title: "Український націоналізм", description: "Розвиток національної свідомості та українізація суспільства є для нас надважливими. Ми українізуємо ігровий простір та підтримуємо ЗСУ, волонтерів і постраждалих від агресії." }, feminism: { title: "Фемінізм", description: "Ми створені як безпечний жіночий простір. Пріоритизуємо розвиток жінок у геймінгу, відкрито підтримуємо фемінізм, використовуємо фемінітиви та активно протидіємо мізогінії." }, equality: { title: "Відсутність дискримінації", description: "Ми проти гомофобії, сексизму, ейблізму, ейджизму та будь-яких форм дискримінації. Україна має бути комфортним місцем, де кожен почувається однаково безпечно." } },
@@ -36,7 +36,7 @@ const FALLBACK_TRANSLATIONS = {
         theme: { label: "Theme" },
         hero: { title: "CatLocTeam", subtitle: "Women's amateur game localization team", description: "We are a cat-loving team of enthusiasts working day and night so Ukrainian gamers can enjoy games in their native language", btnProjects: "Our Projects", btnSupport: "Support Us" },
         about: { title: "What We <span>Do</span>", subtitle: "Our mission is to make gaming more accessible for Ukrainians", localization: { title: "Localization", description: "Complete game translations into Ukrainian while preserving the atmosphere and character personalities" }, technical: { title: "Technical Work", description: "Integration of translations into games, font adaptation and interface adjustments for Ukrainian language" }, quality: { title: "Quality", description: "Thorough review of every text line and testing across different platforms" } },
-        projects: { title: "Our <span>Projects</span>", subtitle: "Games we've localized with love for the Ukrainian community", download: "Download", statusCompleted: "Completed", statusComing: "Coming Soon" },
+        projects: { title: "Our <span>Projects</span>", subtitle: "Games we've localized with love for the Ukrainian community", download: "Download", statusCompleted: "Completed", statusComing: "Coming Soon", games: { "wolf-among-us": { title: "The Wolf Among Us", description: "Full Ukrainian localization of both episodes of the cult adventure game by Telltale Games. Immerse yourself in the dark world of fairy tale characters in your native language!", tags: ["Episode 1", "Episode 2", "Adventure", "Telltale"] }, "coming-soon": { title: "Coming Soon", description: "A new localization is already in development. Follow our social media for updates!", tags: ["In Development"] } } },
         team: { title: "Our <span>Team</span>", subtitle: "Enthusiasts united by a common goal", quote: "We believe every Ukrainian deserves to play games in their native language. Our work is not just translation — it's a love for gaming and Ukrainian culture.", stats: { projects: "Completed projects", working: "Working for you", love: "Love for our craft" } },
         support: { title: "Support the <span>Team</span>", subtitle: "Your support helps us create new localizations", cardTitle: "Donate for Development", cardDescription: "Every donation brings us closer to new translations and improving the quality of existing work", btnDonate: "Support via Monobank" },
         values: { title: "Our <span>Values</span>", subtitle: "Principles that define our work and community", nationalism: { title: "Ukrainian Nationalism", description: "Development of national consciousness and Ukrainization of society are extremely important to us. We Ukrainize the gaming space and support the Armed Forces, volunteers, and victims of aggression." }, feminism: { title: "Feminism", description: "We were created as a safe women's space. We prioritize women's development in gaming, openly support feminism, use feminine word forms, and actively oppose misogyny." }, equality: { title: "Anti-Discrimination", description: "We oppose homophobia, sexism, ableism, ageism, and any forms of discrimination. Ukraine should be a comfortable place where everyone feels equally safe." } },
@@ -101,6 +101,8 @@ function toggleLanguage() {
     currentLanguage = currentLanguage === 'ua' ? 'en' : 'ua';
     localStorage.setItem('language', currentLanguage);
     applyLanguage(currentLanguage);
+    // Re-render games with new language
+    loadGames();
 }
 
 // Load language files
@@ -385,29 +387,45 @@ function renderGames(data) {
     const grid = document.getElementById('projectsGrid');
     if (!grid) return;
 
-    grid.innerHTML = data.games.map(game => `
+    const langData = translations[currentLanguage] || FALLBACK_TRANSLATIONS[currentLanguage];
+    const gamesTranslations = langData?.projects?.games || {};
+    const downloadText = langData?.projects?.download || 'Завантажити';
+    const statusCompleted = langData?.projects?.statusCompleted || 'Завершено';
+    const statusComing = langData?.projects?.statusComing || 'Скоро';
+
+    grid.innerHTML = data.games.map(game => {
+        // Get localized content or fallback to game data
+        const gameKey = game.status === 'coming' ? 'coming-soon' : game.id;
+        const localizedGame = gamesTranslations[gameKey] || {};
+
+        const title = localizedGame.title || game.title;
+        const description = localizedGame.description || game.description;
+        const tags = localizedGame.tags || game.tags;
+        const statusText = game.status === 'coming' ? statusComing : statusCompleted;
+
+        return `
         <div class="project-card fade-in">
             <div class="project-image">
-                ${game.image ? `<img src="${game.image}" alt="${game.title}">` : `<span class="project-placeholder">${game.placeholder}</span>`}
+                ${game.image ? `<img src="${game.image}" alt="${title}">` : `<span class="project-placeholder">${game.placeholder}</span>`}
             </div>
             <div class="project-content">
-                <span class="project-badge ${game.status === 'coming' ? 'coming' : ''}">${game.statusText}</span>
-                <h3 class="project-title">${game.title}</h3>
-                <p class="project-description">${game.description}</p>
+                <span class="project-badge ${game.status === 'coming' ? 'coming' : ''}">${statusText}</span>
+                <h3 class="project-title">${title}</h3>
+                <p class="project-description">${description}</p>
                 <div class="project-tags">
-                    ${game.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                    ${tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                 </div>
                 ${game.downloadUrl ? `
                 <div class="project-actions">
                     <a href="${game.downloadUrl}" target="_blank" class="btn-download">
                         <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                        Завантажити
+                        ${downloadText}
                     </a>
                 </div>
                 ` : ''}
             </div>
         </div>
-    `).join('');
+    `}).join('');
 
     // Re-init scroll animations for new elements
     initScrollAnimations();

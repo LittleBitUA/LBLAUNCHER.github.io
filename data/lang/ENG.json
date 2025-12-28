@@ -45,7 +45,19 @@
         "subtitle": "Games we've localized with love for the Ukrainian community",
         "download": "Download",
         "statusCompleted": "Completed",
-        "statusComing": "Coming Soon"
+        "statusComing": "Coming Soon",
+        "games": {
+            "wolf-among-us": {
+                "title": "The Wolf Among Us",
+                "description": "Full Ukrainian localization of both episodes of the cult adventure game by Telltale Games. Immerse yourself in the dark world of fairy tale characters in your native language!",
+                "tags": ["Episode 1", "Episode 2", "Adventure", "Telltale"]
+            },
+            "coming-soon": {
+                "title": "Coming Soon",
+                "description": "A new localization is already in development. Follow our social media for updates!",
+                "tags": ["In Development"]
+            }
+        }
     },
     "team": {
         "title": "Our <span>Team</span>",
@@ -85,7 +97,7 @@
         "subtitle": "Answers to popular questions about our work",
         "q1": {
             "question": "How do I install the Ukrainian localization?",
-            "answer": "Installation instructions are included with each release. Usually, you need to copy the localization files to the game folder and select Ukrainian in the settings. Detailed instructions are available on our Telegram channel."
+            "answer": "Installation instructions are included with each release. Usually, you need to copy the localization files to the game folder and select Ukrainian in the settings. Detailed instructions are available on our <a href=\"https://t.me/catlocteam\" target=\"_blank\">Telegram channel</a>."
         },
         "q2": {
             "question": "Can I help with translation?",
@@ -97,7 +109,7 @@
         },
         "q4": {
             "question": "How can I learn about new localizations?",
-            "answer": "Subscribe to our Telegram channel — we publish all announcements, releases, and project news there. Also follow us on YouTube and X (Twitter)."
+            "answer": "Subscribe to our <a href=\"https://t.me/catlocteam\" target=\"_blank\">Telegram channel</a> — we publish all announcements, releases, and project news there. Also follow us on <a href=\"https://www.youtube.com/@CatLocTeam\" target=\"_blank\">YouTube</a> and <a href=\"https://x.com/CatLocTeam\" target=\"_blank\">X (Twitter)</a>."
         }
     },
     "join": {
