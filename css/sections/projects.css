@@ -144,6 +144,226 @@
     }
 }
 
+/* --- Progress Bar --- */
+.project-progress {
+    margin-bottom: 15px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    font-family: var(--font-pixel);
+}
+
+.progress-percent {
+    color: var(--pink);
+    font-weight: 600;
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 2px solid var(--pink-dark);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--pink) 0%, var(--green) 100%);
+    border-radius: 2px;
+    transition: width 1s ease-out;
+}
+
+/* --- Details Button --- */
+.btn-details {
+    background: var(--bg-card);
+    color: var(--pink);
+    padding: 12px 20px;
+    border-radius: 4px;
+    border: 2px solid var(--pink);
+    font-weight: 600;
+    font-size: 0.85rem;
+    font-family: var(--font-pixel);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all var(--transition);
+    box-shadow: 3px 3px 0 var(--pink-dark);
+}
+
+.btn-details:hover {
+    background: var(--pink);
+    color: white;
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--pink-dark);
+}
+
+.btn-details:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--pink-dark);
+}
+
+.btn-details svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* --- Game Modal --- */
+.game-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.game-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.game-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.game-modal-content {
+    position: relative;
+    background: var(--bg-card);
+    border: var(--pixel-border) solid var(--pink);
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 8px 8px 0 var(--pink-dark);
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.game-modal.active .game-modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.game-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--pink);
+    border: 2px solid var(--pink-dark);
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+    box-shadow: 2px 2px 0 var(--pink-dark);
+}
+
+.game-modal-close:hover {
+    background: var(--pink-dark);
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 var(--pink-dark);
+}
+
+.game-modal-close svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+}
+
+.game-modal-title {
+    font-family: var(--font-pixel);
+    font-size: 1.3rem;
+    color: var(--pink);
+    margin-bottom: 25px;
+    padding-right: 40px;
+    text-transform: uppercase;
+}
+
+.game-modal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-family: var(--font-pixel);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.detail-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    text-align: right;
+    max-width: 60%;
+}
+
+.detail-features {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-list li {
+    position: relative;
+    padding-left: 20px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.features-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--pink);
+    border-radius: 2px;
+}
+
 @media (max-width: 600px) {
     .projects-grid {
         grid-template-columns: 1fr;
@@ -156,5 +376,27 @@
 
     .project-actions {
         justify-content: center;
+        flex-direction: column;
+    }
+
+    .btn-download,
+    .btn-details {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .game-modal-content {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .detail-value {
+        text-align: left;
+        max-width: 100%;
     }
 }

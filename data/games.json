@@ -8,8 +8,17 @@
             "placeholder": "🐺",
             "status": "completed",
             "statusText": "Завершено",
+            "progress": 100,
             "tags": ["Епізод 1", "Епізод 2", "Adventure", "Telltale"],
-            "downloadUrl": "https://lblauncher.com"
+            "downloadUrl": "https://lblauncher.com",
+            "details": {
+                "developer": "Telltale Games",
+                "releaseYear": "2013",
+                "localizationDate": "2024",
+                "translators": ["Віка", "Катя", "Ангеліна"],
+                "linesTranslated": 15000,
+                "features": ["Повний переклад діалогів", "Локалізовані текстури", "Адаптовані шрифти"]
+            }
         },
         {
             "id": "game-placeholder-2",
@@ -19,8 +28,10 @@
             "placeholder": "🎮",
             "status": "coming",
             "statusText": "Скоро",
+            "progress": 0,
             "tags": ["В розробці"],
-            "downloadUrl": ""
+            "downloadUrl": "",
+            "details": null
         },
         {
             "id": "game-placeholder-3",
@@ -30,8 +41,10 @@
             "placeholder": "🎮",
             "status": "coming",
             "statusText": "Скоро",
+            "progress": 0,
             "tags": ["В розробці"],
-            "downloadUrl": ""
+            "downloadUrl": "",
+            "details": null
         },
         {
             "id": "game-placeholder-4",
@@ -41,8 +54,10 @@
             "placeholder": "🎮",
             "status": "coming",
             "statusText": "Скоро",
+            "progress": 0,
             "tags": ["В розробці"],
-            "downloadUrl": ""
+            "downloadUrl": "",
+            "details": null
         }
     ]
 }

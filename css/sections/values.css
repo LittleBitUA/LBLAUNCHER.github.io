@@ -81,7 +81,7 @@
 }
 
 .value-title {
-    font-size: 0.6rem;
+    font-size: 1.1rem;
     font-weight: 400;
     color: var(--pink);
     margin-bottom: 15px;
@@ -90,7 +90,7 @@
 }
 
 .value-card:nth-child(2) .value-title {
-    color: var(--purple);
+    color: var(--pink-light);
 }
 
 .value-card:nth-child(3) .value-title {

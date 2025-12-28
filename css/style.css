@@ -3,44 +3,51 @@
    Pixel/Retro Style
    =========================== */
 
-/* --- Pixel Font Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* --- Boba Font Import (Custom Ukrainian font by CatLocTeam) --- */
+@font-face {
+    font-family: 'boba';
+    src: url('../assets/fonts/boba_mono_ukrainian_.otf') format('opentype');
+    font-display: swap;
+}
 
 /* --- CSS Variables --- */
 :root {
-    --pink: #E91E8C;
+    --pink: #ed208b;
     --pink-light: #FF4DB2;
-    --pink-dark: #C4177A;
+    --pink-dark: #a71c66;
     --green: #7ED321;
     --cyan: #50E3C2;
-    --purple: #9B59B6;
+    --purple: #3a002d;
+    --black: #0d0d0d;
+    --white: #f5f5f5;
     --transition: 0.2s ease;
 
-    /* Pixel-specific */
+    /* Font */
     --pixel-border: 3px;
-    --font-pixel: 'Press Start 2P', monospace;
-    --font-body: 'Montserrat', sans-serif;
+    --font-pixel: 'boba', monospace;
+    --font-body: 'boba', 'Montserrat', sans-serif;
 }
 
-/* --- Dark Theme (Retro Purple Gradient) --- */
+/* --- Dark Theme (Retro Purple Gradient based on background.webp) --- */
 [data-theme="dark"] {
-    --bg-primary: #1a0a1a;
-    --bg-secondary: #2d1a2d;
+    --bg-primary: #0d0d0d;
+    --bg-secondary: #1a0a14;
     --bg-card: #0a0a0a;
-    --bg-card-hover: #1a1a2a;
+    --bg-card-hover: #1a0a1a;
     --text-primary: #FFFFFF;
     --text-secondary: #B0B0B0;
     --text-muted: #707070;
     --border-color: var(--pink);
     --shadow: 0 0 20px rgba(233, 30, 140, 0.3);
     --shadow-hover: 0 0 30px rgba(233, 30, 140, 0.5);
-    --gradient-hero: linear-gradient(180deg, #1a0a1a 0%, #2d1a2d 50%, #3d1a3d 100%);
+    --gradient-hero: radial-gradient(ellipse at 50% 30%, #3d0a2d 0%, #1a0514 40%, #0d0d0d 100%);
+    --gradient-bg: radial-gradient(ellipse at 50% 50%, #2d0a20 0%, #150810 50%, #0d0d0d 100%);
 }
 
 /* --- Light Theme --- */
 [data-theme="light"] {
     --bg-primary: #FFF5FA;
-    --bg-secondary: #FFE5F2;
+    --bg-secondary: #FFE8F3;
     --bg-card: #FFFFFF;
     --bg-card-hover: #FFF0F8;
     --text-primary: #1A1A1A;
@@ -49,7 +56,8 @@
     --border-color: var(--pink);
     --shadow: 0 0 15px rgba(233, 30, 140, 0.2);
     --shadow-hover: 0 0 25px rgba(233, 30, 140, 0.3);
-    --gradient-hero: linear-gradient(180deg, #FFF5FA 0%, #FFE5F2 50%, #FFD5E8 100%);
+    --gradient-hero: radial-gradient(ellipse at 50% 30%, #FFD5E8 0%, #FFF0F8 40%, #FFF5FA 100%);
+    --gradient-bg: radial-gradient(ellipse at 50% 50%, #FFE0F0 0%, #FFF5FA 60%, #FFFFFF 100%);
 }
 
 /* --- CRT Scanlines Overlay --- */
@@ -99,12 +107,12 @@ html {
 
 body {
     font-family: var(--font-body);
-    background: var(--gradient-hero);
+    background: var(--gradient-bg, var(--gradient-hero));
     background-attachment: fixed;
     color: var(--text-primary);
     line-height: 1.8;
     transition: background var(--transition), color var(--transition);
-    image-rendering: pixelated;
+    min-height: 100vh;
 }
 
 /* --- Pixel Typography --- */
@@ -155,7 +163,7 @@ h1, h2, h3, .section-title, .nav-logo span {
 }
 
 .theme-toggle span {
-    font-size: 7px;
+    font-size: 0.55rem;
     font-weight: 400;
     color: var(--text-primary);
     font-family: var(--font-pixel);
@@ -204,7 +212,7 @@ h1, h2, h3, .section-title, .nav-logo span {
 }
 
 .lang-text {
-    font-size: 7px;
+    font-size: 0.55rem;
     font-weight: 400;
     color: var(--text-primary);
     min-width: 18px;
@@ -249,49 +257,103 @@ nav {
 }
 
 .nav-logo img {
-    width: 45px;
+    width: 120px;
     height: auto;
-    image-rendering: pixelated;
 }
 
 .nav-logo span {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     font-weight: 400;
-    color: var(--pink);
+    color: var(--black);
     font-family: var(--font-pixel);
-    text-shadow: 2px 2px 0 var(--pink-dark);
+    -webkit-text-stroke: 1px var(--pink);
+    text-shadow:
+        -0.06em -0.06em 0 var(--pink),
+        0.06em -0.06em 0 var(--pink),
+        -0.06em 0.06em 0 var(--pink),
+        0.06em 0.06em 0 var(--pink);
+    letter-spacing: 2px;
 }
 
 .nav-links {
     display: flex;
-    gap: 8px;
+    gap: 15px;
     list-style: none;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--pink);
+    color: var(--black);
     font-weight: 400;
     font-family: var(--font-pixel);
-    font-size: 0.5rem;
-    text-transform: uppercase;
+    font-size: 1rem;
     transition: all var(--transition);
     position: relative;
-    padding: 5px 8px;
+    padding: 5px 10px;
     white-space: nowrap;
-}
-
-.nav-links a::after {
-    display: none;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 0.5px var(--pink);
+    text-shadow:
+        -0.05em -0.05em 0 var(--pink),
+        0.05em -0.05em 0 var(--pink),
+        -0.05em 0.05em 0 var(--pink),
+        0.05em 0.05em 0 var(--pink);
 }
 
 .nav-links a:hover {
-    color: var(--text-primary);
-    background: var(--pink);
+    color: var(--pink);
+    text-shadow: none;
+    -webkit-text-stroke: 0;
 }
 
-.nav-links a:hover::after {
-    display: none;
+/* --- Dropdown Menu --- */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-trigger {
+    cursor: pointer;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-card);
+    border: var(--pixel-border) solid var(--pink);
+    border-radius: 4px;
+    box-shadow: 4px 4px 0 var(--pink-dark);
+    list-style: none;
+    padding: 10px 0;
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition);
+    z-index: 1000;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-dropdown-menu li {
+    padding: 0;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover {
+    background: var(--pink);
+    color: white !important;
+    text-shadow: none;
+    -webkit-text-stroke: 0;
 }
 
 /* --- Mobile Menu --- */
@@ -313,62 +375,58 @@ nav {
     transition: all var(--transition);
 }
 
-/* --- Buttons (Pixel Style) --- */
+/* --- Buttons (CatLocTeam Style) --- */
 .btn {
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-size: 0.7rem;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
     font-weight: 400;
     text-decoration: none;
     transition: all var(--transition);
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-family: var(--font-pixel);
-    text-transform: uppercase;
-    border: var(--pixel-border) solid;
+    border: 3px solid var(--pink);
     cursor: pointer;
+    letter-spacing: 2px;
 }
 
 .btn-primary {
     background: var(--pink);
-    color: white;
-    border-color: var(--pink-dark);
-    box-shadow: 4px 4px 0 var(--pink-dark);
+    color: var(--black);
+    border-color: var(--pink);
 }
 
 .btn-primary:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 var(--pink-dark);
+    background: var(--pink-dark);
+    border-color: var(--pink-dark);
+    transform: scale(1.05);
 }
 
 .btn-primary:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 var(--pink-dark);
+    transform: scale(0.98);
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--pink);
     border-color: var(--pink);
-    box-shadow: 4px 4px 0 var(--pink-dark);
 }
 
 .btn-secondary:hover {
     background: var(--pink);
-    color: white;
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0 var(--pink-dark);
+    color: var(--black);
+    transform: scale(1.05);
 }
 
 .btn-secondary:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0 var(--pink-dark);
+    transform: scale(0.98);
 }
 
 .btn svg {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
 }
 
 .btn-donate {
@@ -376,7 +434,7 @@ nav {
     color: white;
     border-color: var(--pink-dark);
     padding: 14px 30px;
-    font-size: 0.6rem;
+    font-size: 1rem;
     box-shadow: 4px 4px 0 var(--pink-dark);
 }
 
@@ -400,17 +458,24 @@ section {
 
 .section-title {
     text-align: center;
-    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 400;
     margin-bottom: 20px;
-    color: var(--text-primary);
+    color: var(--black);
     font-family: var(--font-pixel);
-    text-transform: uppercase;
-    text-shadow: 3px 3px 0 var(--pink-dark);
+    letter-spacing: 3px;
+    -webkit-text-stroke: 1px var(--pink);
+    text-shadow:
+        -0.05em -0.05em 0 var(--pink),
+        0.05em -0.05em 0 var(--pink),
+        -0.05em 0.05em 0 var(--pink),
+        0.05em 0.05em 0 var(--pink);
 }
 
 .section-title span {
     color: var(--pink);
+    text-shadow: none;
+    -webkit-text-stroke: 0;
 }
 
 .section-subtitle {
@@ -501,6 +566,10 @@ section {
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
+    .nav-logo img {
+        width: 80px;
+    }
+
     .nav-links {
         display: none;
         position: absolute;
@@ -514,6 +583,10 @@ section {
         border-bottom: 1px solid var(--border-color);
     }
 
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
     .nav-links.active {
         display: flex;
     }
@@ -523,14 +596,15 @@ section {
     }
 
     .nav-controls {
-        gap: 8px;
-        margin-right: 10px;
+        gap: 6px;
+        margin-right: 8px;
     }
 
     .theme-toggle,
     .lang-toggle {
-        padding: 5px 8px;
+        padding: 4px 6px;
         box-shadow: 2px 2px 0 var(--pink-dark);
+        border-width: 2px;
     }
 
     .lang-toggle {
@@ -543,12 +617,12 @@ section {
     }
 
     .theme-toggle svg {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
     }
 
     .lang-flag {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .scroll-top {

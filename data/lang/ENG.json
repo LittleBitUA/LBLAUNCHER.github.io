@@ -12,17 +12,18 @@
         "faq": "FAQ",
         "join": "Join Us",
         "support": "Support",
-        "contact": "Contact"
+        "contact": "Contact",
+        "more": "More ▾"
     },
     "theme": {
         "label": "Theme"
     },
     "hero": {
         "title": "CatLocTeam",
-        "subtitle": "Women's amateur game localization team",
-        "description": "We are a cat-loving team of enthusiasts working day and night so Ukrainian gamers can enjoy games in their native language",
-        "btnProjects": "Our Projects",
-        "btnSupport": "Support Us"
+        "subtitle": "women's game localization team",
+        "description": "we work day and night so you can play in Ukrainian",
+        "btnProjects": "our projects",
+        "btnSupport": "support us"
     },
     "about": {
         "title": "What We <span>Do</span>",

@@ -273,14 +273,22 @@ function initScrollTopButton() {
 
 const FALLBACK_TEAM = {
     team: [
-        { id: "vika", name: "Віка", role: "Начальниця", info: "Координує роботу команди", image: "", placeholder: "👩‍💼" },
-        { id: "anya", name: "Аня", role: "Заступниця", info: "Заступниця начальниці", image: "", placeholder: "👩‍💻" },
-        { id: "marina", name: "Марина", role: "Програмістка", info: "Технічна реалізація", image: "", placeholder: "💻" },
-        { id: "olya", name: "Оля", role: "Перекладачка", info: "Переклад текстів", image: "", placeholder: "📝" },
-        { id: "katya", name: "Катя", role: "Редакторка", info: "Редагування та коректура", image: "", placeholder: "✏️" },
-        { id: "dasha", name: "Даша", role: "Текстурниця", info: "Робота з текстурами", image: "", placeholder: "🎨" },
-        { id: "yulya", name: "Юля", role: "Тестувальниця", info: "Тестування локалізацій", image: "", placeholder: "🐛" },
-        { id: "sonya", name: "Соня", role: "SMM", info: "Соціальні мережі", image: "", placeholder: "📱" }
+        { id: "vika", name: "Віка", role: "Начальниця", info: "Координує роботу команди", image: "assets/icons/віка начяльниця.png", placeholder: "👩‍💼" },
+        { id: "katya", name: "Катя", role: "Заступниця", info: "Заступниця начальниці", image: "assets/icons/катя заступниця начальниці.png", placeholder: "👩‍💻" },
+        { id: "ivanna", name: "Іванна", role: "Програмістка", info: "Технічна реалізація", image: "assets/icons/іванна програмістка.png", placeholder: "💻" },
+        { id: "angelina", name: "Ангеліна", role: "Перекладачка", info: "Переклад текстів", image: "assets/icons/ангеліна перекладачка.png", placeholder: "📝" },
+        { id: "nastya", name: "Настя", role: "Перекладачка", info: "Переклад текстів", image: "assets/icons/настя перекладачка.png", placeholder: "📝" },
+        { id: "sofiya", name: "Софія", role: "Перекладачка", info: "Переклад текстів", image: "assets/icons/софія перекладачка.png", placeholder: "📝" },
+        { id: "ji", name: "Джі", role: "Перекладачка", info: "Переклад текстів", image: "assets/icons/джи перекладачка 1.png", placeholder: "📝" },
+        { id: "yevgeniya", name: "Євгенія", role: "Перекладачка", info: "Переклад текстів", image: "assets/icons/євгенія перекладачка 1.png", placeholder: "📝" },
+        { id: "yasya", name: "Яся", role: "Перекладачка", info: "Переклад текстів", image: "assets/icons/яся садочок прекладачка.png", placeholder: "📝" },
+        { id: "svitlodiod", name: "Світлодіод", role: "Редакторка", info: "Редагування та коректура", image: "assets/icons/світлодіод редакторка.png", placeholder: "✏️" },
+        { id: "alexasha", name: "Алексаша", role: "Текстурниця", info: "Робота з текстурами", image: "assets/icons/алексаша текстурниця.png", placeholder: "🎨" },
+        { id: "ivanka", name: "Іванка", role: "Текстурниця", info: "Робота з текстурами", image: "assets/icons/ik іванка текстурниця.png", placeholder: "🎨" },
+        { id: "himera", name: "Хімера", role: "Текстурниця", info: "Робота з текстурами", image: "assets/icons/хімера текстурниця.png", placeholder: "🎨" },
+        { id: "ayuni", name: "Аюні", role: "Текстурниця", info: "Робота з текстурами", image: "assets/icons/аюні текстуриця.png", placeholder: "🎨" },
+        { id: "katelutsa", name: "Кателуца", role: "Тестувальниця", info: "Тестування локалізацій", image: "assets/icons/кателуца тестувальниця.png", placeholder: "🐛" },
+        { id: "sho", name: "Шо", role: "ТікТокерка", info: "Соціальні мережі", image: "assets/icons/шо тіктокерка.png", placeholder: "📱" }
     ]
 };
 
@@ -303,9 +311,9 @@ function renderTeam(data) {
     const carousel = document.getElementById('teamCarousel');
     if (!carousel) return;
 
-    // Render team twice for seamless infinite scroll
+    // Render team as grid (no longer duplicating for carousel)
     const teamHTML = data.team.map(renderTeamMember).join('');
-    carousel.innerHTML = teamHTML + teamHTML;
+    carousel.innerHTML = teamHTML;
 }
 
 async function loadTeam() {
@@ -340,12 +348,21 @@ const FALLBACK_GAMES = {
             id: "wolf-among-us",
             title: "The Wolf Among Us",
             description: "Повна українська локалізація обох епізодів культової пригодницької гри від Telltale Games. Зануртеся у темний світ казкових персонажів рідною мовою!",
-            image: "",
+            image: "assets/games/wolf-among-us.jpg",
             placeholder: "🐺",
             status: "completed",
             statusText: "Завершено",
+            progress: 100,
             tags: ["Епізод 1", "Епізод 2", "Adventure", "Telltale"],
-            downloadUrl: "https://lblauncher.com"
+            downloadUrl: "https://lblauncher.com",
+            details: {
+                developer: "Telltale Games",
+                releaseYear: "2013",
+                localizationDate: "2024",
+                translators: ["Віка", "Катя", "Ангеліна"],
+                linesTranslated: 15000,
+                features: ["Повний переклад діалогів", "Локалізовані текстури", "Адаптовані шрифти"]
+            }
         },
         {
             id: "game-placeholder-2",
@@ -355,8 +372,10 @@ const FALLBACK_GAMES = {
             placeholder: "🎮",
             status: "coming",
             statusText: "Скоро",
+            progress: 0,
             tags: ["В розробці"],
-            downloadUrl: ""
+            downloadUrl: "",
+            details: null
         },
         {
             id: "game-placeholder-3",
@@ -366,8 +385,10 @@ const FALLBACK_GAMES = {
             placeholder: "🎮",
             status: "coming",
             statusText: "Скоро",
+            progress: 0,
             tags: ["В розробці"],
-            downloadUrl: ""
+            downloadUrl: "",
+            details: null
         },
         {
             id: "game-placeholder-4",
@@ -377,8 +398,10 @@ const FALLBACK_GAMES = {
             placeholder: "🎮",
             status: "coming",
             statusText: "Скоро",
+            progress: 0,
             tags: ["В розробці"],
-            downloadUrl: ""
+            downloadUrl: "",
+            details: null
         }
     ]
 };
@@ -390,6 +413,8 @@ function renderGames(data) {
     const langData = translations[currentLanguage] || FALLBACK_TRANSLATIONS[currentLanguage];
     const gamesTranslations = langData?.projects?.games || {};
     const downloadText = langData?.projects?.download || 'Завантажити';
+    const detailsText = currentLanguage === 'ua' ? 'Деталі' : 'Details';
+    const progressText = currentLanguage === 'ua' ? 'Прогрес' : 'Progress';
     const statusCompleted = langData?.projects?.statusCompleted || 'Завершено';
     const statusComing = langData?.projects?.statusComing || 'Скоро';
 
@@ -402,9 +427,10 @@ function renderGames(data) {
         const description = localizedGame.description || game.description;
         const tags = localizedGame.tags || game.tags;
         const statusText = game.status === 'coming' ? statusComing : statusCompleted;
+        const progress = game.progress || 0;
 
         return `
-        <div class="project-card fade-in">
+        <div class="project-card fade-in" data-game-id="${game.id}">
             <div class="project-image">
                 ${game.image ? `<img src="${game.image}" alt="${title}">` : `<span class="project-placeholder">${game.placeholder}</span>`}
             </div>
@@ -412,23 +438,121 @@ function renderGames(data) {
                 <span class="project-badge ${game.status === 'coming' ? 'coming' : ''}">${statusText}</span>
                 <h3 class="project-title">${title}</h3>
                 <p class="project-description">${description}</p>
+
+                <!-- Progress Bar -->
+                <div class="project-progress">
+                    <div class="progress-label">
+                        <span>${progressText}</span>
+                        <span class="progress-percent">${progress}%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${progress}%"></div>
+                    </div>
+                </div>
+
                 <div class="project-tags">
                     ${tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                 </div>
-                ${game.downloadUrl ? `
                 <div class="project-actions">
+                    ${game.downloadUrl ? `
                     <a href="${game.downloadUrl}" target="_blank" class="btn-download">
                         <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                         ${downloadText}
                     </a>
+                    ` : ''}
+                    ${game.details ? `
+                    <button class="btn-details" onclick="showGameDetails('${game.id}')">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        ${detailsText}
+                    </button>
+                    ` : ''}
                 </div>
-                ` : ''}
             </div>
         </div>
     `}).join('');
 
+    // Store games data for details modal
+    window.gamesData = data.games;
+
     // Re-init scroll animations for new elements
     initScrollAnimations();
+}
+
+// Show game details modal
+function showGameDetails(gameId) {
+    const game = window.gamesData?.find(g => g.id === gameId);
+    if (!game || !game.details) return;
+
+    const isUa = currentLanguage === 'ua';
+    const details = game.details;
+
+    const labels = {
+        developer: isUa ? 'Розробник' : 'Developer',
+        releaseYear: isUa ? 'Рік випуску' : 'Release Year',
+        localizationDate: isUa ? 'Дата локалізації' : 'Localization Date',
+        translators: isUa ? 'Перекладачки' : 'Translators',
+        linesTranslated: isUa ? 'Перекладених рядків' : 'Lines Translated',
+        features: isUa ? 'Особливості' : 'Features'
+    };
+
+    const modal = document.createElement('div');
+    modal.className = 'game-modal';
+    modal.innerHTML = `
+        <div class="game-modal-overlay" onclick="closeGameDetails()"></div>
+        <div class="game-modal-content">
+            <button class="game-modal-close" onclick="closeGameDetails()">
+                <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <h3 class="game-modal-title">${game.title}</h3>
+            <div class="game-modal-details">
+                <div class="detail-item">
+                    <span class="detail-label">${labels.developer}</span>
+                    <span class="detail-value">${details.developer}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">${labels.releaseYear}</span>
+                    <span class="detail-value">${details.releaseYear}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">${labels.localizationDate}</span>
+                    <span class="detail-value">${details.localizationDate}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">${labels.translators}</span>
+                    <span class="detail-value">${details.translators.join(', ')}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">${labels.linesTranslated}</span>
+                    <span class="detail-value">${details.linesTranslated.toLocaleString()}</span>
+                </div>
+                <div class="detail-item detail-features">
+                    <span class="detail-label">${labels.features}</span>
+                    <ul class="features-list">
+                        ${details.features.map(f => `<li>${f}</li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+
+    // Animate in
+    requestAnimationFrame(() => {
+        modal.classList.add('active');
+    });
+}
+
+// Close game details modal
+function closeGameDetails() {
+    const modal = document.querySelector('.game-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.remove();
+            document.body.style.overflow = '';
+        }, 300);
+    }
 }
 
 async function loadGames() {
@@ -598,6 +722,86 @@ function initConfetti() {
 }
 
 // ===========================
+// Counter Animation for Stats
+// ===========================
+function initCounterAnimation() {
+    const counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+
+    const observerOptions = {
+        threshold: 0.8,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const animateCounter = (element) => {
+        const target = parseInt(element.getAttribute('data-count'));
+        const suffix = element.getAttribute('data-suffix') || '';
+        const duration = 2500; // 2.5 seconds - slower animation
+        const startTime = performance.now();
+
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Easing function for smooth animation
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const current = Math.floor(easeOutQuart * target);
+
+            element.textContent = current + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target + suffix;
+            }
+        }
+
+        requestAnimationFrame(updateCounter);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Small delay before starting animation
+                setTimeout(() => {
+                    animateCounter(entry.target);
+                }, 300);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => observer.observe(counter));
+}
+
+// ===========================
+// Day/Night Animation Control
+// ===========================
+function initDayNightAnimation() {
+    const dayNightElement = document.querySelector('.stat-daynight');
+    if (!dayNightElement) return;
+
+    // Initially pause the animation
+    const icons = dayNightElement.querySelectorAll('.cycle-icon');
+    icons.forEach(icon => {
+        icon.style.animationPlayState = 'paused';
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Start animation when visible
+                icons.forEach(icon => {
+                    icon.style.animationPlayState = 'running';
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(dayNightElement);
+}
+
+// ===========================
 // Initialize All
 // ===========================
 document.addEventListener('DOMContentLoaded', () => {
@@ -612,4 +816,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallax();
     initTypingEffect();
     initConfetti();
+    initCounterAnimation();
+    initDayNightAnimation();
 });
