@@ -1,0 +1,58 @@
+/* ===========================
+   About Section
+   =========================== */
+
+.about {
+    background: var(--bg-secondary);
+}
+
+.about-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.about-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition);
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    background: var(--bg-card-hover);
+}
+
+.about-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+.about-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.about-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}

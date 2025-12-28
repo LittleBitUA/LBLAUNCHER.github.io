@@ -1,0 +1,119 @@
+/* ===========================
+   Join / How to Help Section
+   =========================== */
+
+.join {
+    background: var(--bg-secondary);
+}
+
+.join-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.join-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 35px 30px;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.join-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--pink), var(--purple));
+    transform: scaleX(0);
+    transition: transform var(--transition);
+}
+
+.join-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.join-card:hover::before {
+    transform: scaleX(1);
+}
+
+.join-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+.join-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.join-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.join-cta {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.join-cta p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.btn-join {
+    background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all var(--transition);
+    box-shadow: 0 10px 30px rgba(233, 30, 140, 0.3);
+}
+
+.btn-join:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(233, 30, 140, 0.4);
+}
+
+.btn-join svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+@media (max-width: 768px) {
+    .join-grid {
+        grid-template-columns: 1fr;
+    }
+}

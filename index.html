@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatLocTeam - Українська локалізація ігор</title>
+    <meta name="description" content="CatLocTeam - жіноча аматорська команда локалізації ігор українською мовою">
+    <meta name="keywords" content="локалізація ігор, українська локалізація, переклад ігор, CatLocTeam">
+    <meta name="author" content="CatLocTeam">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="CatLocTeam - Українська локалізація ігор">
+    <meta property="og:description" content="Жіноча аматорська команда локалізації ігор українською мовою">
+    <meta property="og:image" content="assets/catloc2.png">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/catloc2.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/about.css">
+    <link rel="stylesheet" href="css/sections/projects.css">
+    <link rel="stylesheet" href="css/sections/team.css">
+    <link rel="stylesheet" href="css/sections/support.css">
+    <link rel="stylesheet" href="css/sections/social.css">
+    <link rel="stylesheet" href="css/sections/faq.css">
+    <link rel="stylesheet" href="css/sections/join.css">
+    <link rel="stylesheet" href="css/sections/footer.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Перемкнути тему">
+        <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <span>Тема</span>
+    </button>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="assets/catloc2.png" alt="CatLocTeam Logo">
+                <span>CatLocTeam</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#projects">Проєкти</a></li>
+                <li><a href="#team">Команда</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#join">Долучитись</a></li>
+                <li><a href="#support">Підтримати</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="assets/catloc2.png" alt="CatLocTeam" class="hero-logo">
+            <h1 class="hero-title">CatLocTeam</h1>
+            <p class="hero-subtitle">Жіноча аматорська команда локалізації ігор</p>
+            <p class="hero-description">
+                Ми - котяча команда ентузіасток, які працюють день і ніч, щоб українські геймери могли насолоджуватися іграми рідною мовою
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                    Наші проєкти
+                </a>
+                <a href="#support" class="btn btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    Підтримати
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">Чим ми <span>займаємось</span></h2>
+        <p class="section-subtitle">Наша місія - зробити ігровий світ доступнішим для українців</p>
+        <div class="about-grid">
+            <div class="about-card fade-in">
+                <div class="about-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+                </div>
+                <h3>Локалізація</h3>
+                <p>Повний переклад ігор українською мовою з збереженням атмосфери та характеру персонажів</p>
+            </div>
+            <div class="about-card fade-in">
+                <div class="about-icon">
+                    <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                </div>
+                <h3>Технічна робота</h3>
+                <p>Інтеграція перекладів у гри, адаптація шрифтів та інтерфейсу для української мови</p>
+            </div>
+            <div class="about-card fade-in">
+                <div class="about-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <h3>Якість</h3>
+                <p>Ретельна перевірка кожного рядка тексту та тестування на різних платформах</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Наші <span>проєкти</span></h2>
+        <p class="section-subtitle">Ігри, які ми локалізували з любов'ю для української спільноти</p>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <span class="project-placeholder">🐺</span>
+                </div>
+                <div class="project-content">
+                    <span class="project-badge">Завершено</span>
+                    <h3 class="project-title">The Wolf Among Us</h3>
+                    <p class="project-description">
+                        Повна українська локалізація обох епізодів культової пригодницької гри від Telltale Games. Зануртеся у темний світ казкових персонажів рідною мовою!
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">Епізод 1</span>
+                        <span class="project-tag">Епізод 2</span>
+                        <span class="project-tag">Adventure</span>
+                        <span class="project-tag">Telltale</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <h2 class="section-title">Наша <span>команда</span></h2>
+        <p class="section-subtitle">Ентузіастки, об'єднані спільною метою</p>
+        <div class="team-content">
+            <p class="team-quote">
+                Ми віримо, що кожен українець заслуговує грати в ігри рідною мовою. Наша робота - це не просто переклад, це любов до геймінгу та української культури.
+            </p>
+            <div class="team-stats">
+                <div class="stat">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Завершених проєкти</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Працюємо для вас</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Любові до справи</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support" id="support">
+        <h2 class="section-title">Підтримайте <span>команду</span></h2>
+        <p class="section-subtitle">Ваша підтримка допомагає нам створювати нові локалізації</p>
+        <div class="support-card fade-in">
+            <div class="support-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <h3>Донат на розвиток</h3>
+            <p>Кожна гривня наближає нас до нових перекладів та покращення якості існуючих робіт</p>
+            <a href="https://send.monobank.ua/jar/AFeNAktzry" target="_blank" class="btn btn-donate">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                Підтримати через Monobank
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <h2 class="section-title">Часті <span>запитання</span></h2>
+        <p class="section-subtitle">Відповіді на популярні питання про нашу роботу</p>
+        <div class="faq-container">
+            <div class="faq-item fade-in">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Як встановити українську локалізацію?
+                    <span class="faq-icon">
+                        <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Інструкція з встановлення додається до кожного релізу. Зазвичай потрібно скопіювати файли локалізації у папку гри та обрати українську мову в налаштуваннях. Детальні інструкції є на нашому <a href="https://t.me/catlocteam" target="_blank">Telegram каналі</a>.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Чи можу я допомогти з перекладом?
+                    <span class="faq-icon">
+                        <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Так! Ми завжди раді новим учасникам команди. Напишіть нам у Telegram, і ми обговоримо можливості співпраці. Потрібні перекладачі, редактори та тестувальники.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Чи працює локалізація з ліцензійною версією гри?
+                    <span class="faq-icon">
+                        <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Так, наші локалізації розроблені для офіційних версій ігор зі Steam та інших платформ. Ми тестуємо сумісність з останніми оновленнями ігор.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Як дізнатися про нові локалізації?
+                    <span class="faq-icon">
+                        <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                    </span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Підпишіться на наш <a href="https://t.me/catlocteam" target="_blank">Telegram канал</a> — там ми публікуємо всі анонси, релізи та новини проєктів. Також слідкуйте за нами на <a href="https://www.youtube.com/@CatLocTeam" target="_blank">YouTube</a> та <a href="https://x.com/CatLocTeam" target="_blank">X (Twitter)</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section class="join" id="join">
+        <h2 class="section-title">Як <span>допомогти</span></h2>
+        <p class="section-subtitle">Є багато способів підтримати українську локалізацію ігор</p>
+        <div class="join-grid">
+            <div class="join-card fade-in">
+                <div class="join-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+                </div>
+                <h3>Перекладач</h3>
+                <p>Допомагай перекладати тексти ігор українською мовою, зберігаючи атмосферу та характер оригіналу.</p>
+            </div>
+            <div class="join-card fade-in">
+                <div class="join-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                </div>
+                <h3>Редактор</h3>
+                <p>Перевіряй якість перекладу, виправляй помилки та слідкуй за консистентністю термінології.</p>
+            </div>
+            <div class="join-card fade-in">
+                <div class="join-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z"/></svg>
+                </div>
+                <h3>Тестувальник</h3>
+                <p>Тестуй локалізації в грі, шукай баги та допомагай покращувати якість перекладів.</p>
+            </div>
+        </div>
+        <div class="join-cta">
+            <p>Хочеш приєднатися до нашої котячої команди?</p>
+            <a href="https://t.me/catlocteam" target="_blank" class="btn-join">
+                <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                Написати в Telegram
+            </a>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="social" id="contact">
+        <h2 class="section-title">Слідкуйте за <span>нами</span></h2>
+        <p class="section-subtitle">Будьте в курсі новин та анонсів нових локалізацій</p>
+        <div class="social-links">
+            <a href="https://t.me/catlocteam" target="_blank" class="social-link telegram" title="Telegram">
+                <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@CatLocTeam" target="_blank" class="social-link youtube" title="YouTube">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://x.com/CatLocTeam" target="_blank" class="social-link twitter" title="X (Twitter)">
+                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <img src="assets/catloc2.png" alt="CatLocTeam" class="footer-logo">
+        <p class="footer-text">
+            <span>CatLocTeam</span> | 2025
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

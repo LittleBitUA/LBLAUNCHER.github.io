@@ -1,0 +1,144 @@
+/* ===========================
+   Projects Section
+   =========================== */
+
+.projects {
+    background: var(--bg-primary);
+}
+
+.projects-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.project-image {
+    background: linear-gradient(135deg, #2D1A2D 0%, #1A1A2D 100%);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+}
+
+.project-image img {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.project-placeholder {
+    font-size: 4rem;
+}
+
+.project-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--green) 0%, var(--cyan) 100%);
+    color: #0D0D0D;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    width: fit-content;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.project-description {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.project-tag {
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+}
+
+.project-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.btn-download {
+    background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition);
+    box-shadow: 0 5px 20px rgba(233, 30, 140, 0.3);
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(233, 30, 140, 0.4);
+}
+
+.btn-download svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        min-height: 200px;
+    }
+
+    .project-actions {
+        justify-content: center;
+    }
+}

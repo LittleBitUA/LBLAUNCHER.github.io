@@ -1,0 +1,28 @@
+/* ===========================
+   Footer
+   =========================== */
+
+footer {
+    background: var(--bg-secondary);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-logo {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.footer-text span {
+    color: var(--pink);
+}
+
+.footer-heart {
+    color: #FF4D6A;
+}

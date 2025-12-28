@@ -1,0 +1,73 @@
+/* ===========================
+   Team Section
+   =========================== */
+
+.team {
+    background: var(--bg-secondary);
+}
+
+.team-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.team-quote {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    position: relative;
+    padding: 0 40px;
+}
+
+.team-quote::before,
+.team-quote::after {
+    content: '"';
+    font-size: 4rem;
+    color: var(--pink);
+    opacity: 0.3;
+    position: absolute;
+    font-family: Georgia, serif;
+}
+
+.team-quote::before {
+    left: 0;
+    top: -20px;
+}
+
+.team-quote::after {
+    right: 0;
+    bottom: -40px;
+}
+
+.team-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--pink);
+    line-height: 1;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .team-stats {
+        gap: 40px;
+    }
+}

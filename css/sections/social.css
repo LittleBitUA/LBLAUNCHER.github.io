@@ -1,0 +1,51 @@
+/* ===========================
+   Social & Contact Section
+   =========================== */
+
+.social {
+    background: var(--bg-primary);
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.social-link {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+    text-decoration: none;
+}
+
+.social-link svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+.social-link.telegram {
+    background: linear-gradient(135deg, #0088cc 0%, #229ED9 100%);
+}
+
+.social-link.youtube {
+    background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+}
+
+.social-link.twitter {
+    background: linear-gradient(135deg, #1DA1F2 0%, #0D8BD9 100%);
+}
+
+.social-link:hover {
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
